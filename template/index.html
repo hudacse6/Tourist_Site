@@ -34,18 +34,19 @@
                             <div class="logo"><a href="#">Travello</a></div>
                             <nav class="main_nav">
                                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#">About us</a></li>
-                                    {% if user.is_authenticated %}
-                                        <li>Hello, {{ user.first_name }}</li>
-                                        <li><a href="logout">Logout</a></li>
-                                    {% else %}
-                                        <li><a href="register">Register</a></li>
-                                        <li><a href="login">Login</a></li>
-                                    {% endif %}
-                                </ul>
+										<li class="active"><a href="#">Home</a></li>
+										<li><a href="#">Contact</a></li>
+
+										{% if user.is_authenticated %}
+										<li>Hello, {{user.first_name}}</li>
+										<li><a href="logout">Logout</a></li>
+										{% else %}
+										<li><a href="register">Register</a></li>
+										<li><a href="login">Login</a></li>
+										{% endif %}
+									</ul>
                             </nav>
-                            <div class="header_phone ml-auto">Call us: 445 678 33</div>
+                            <div class="header_phone ml-auto">Call us: 880 1745 96 96 97</div>
 
                             <!-- Hamburger -->
 
@@ -76,7 +77,10 @@
         <div class="menu_header d-flex flex-row align-items-center justify-content-start">
             <div class="menu_logo"><a href="index.html">Travello</a></div>
             <div class="menu_close_container ml-auto">
-                <div class="menu_close"><div></div><div></div></div>
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </div>
         <div class="menu_content">
@@ -252,47 +256,47 @@
     </div>
 
     <!-- Destinations -->
-		<div class="destinations" id="destinations">
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<div class="section_subtitle">simply amazing places</div>
-						<div class="section_title">
-							<h2>Popular Destinations</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row destinations_row">
-					<div class="col">
-						<div class="destinations_container item_grid">
+    <div class="destinations" id="destinations">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_subtitle">simply amazing places</div>
+                    <div class="section_title">
+                        <h2>Popular Destinations</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row destinations_row">
+                <div class="col">
+                    <div class="destinations_container item_grid">
 
-							{% for foo in dest %}
-							<!-- Destination -->
-							<div class="destination item">
-								<div class="destination_image">
-									<img src="{{foo.img.url}}" alt="">
+                        {% for foo in dest %}
+                            <!-- Destination -->
+                            <div class="destination item">
+                                <div class="destination_image">
+                                    <img style="height: 200px; width: 300px" src="{{ foo.img.url }}" alt="pic">
 
-									{% if foo.offer %}
-									<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
-									{% endif %}
-								</div>
-								<div class="destination_content">
-									<div class="destination_title"><a href="destinations.html">{{foo.name}}</a>
-									</div>
-									<div class="destination_subtitle">
-										<p>{{foo.desc}}</p>
-									</div>
-									<div class="destination_price">From ${{foo.price}}</div>
-								</div>
-							</div>
+                                    {% if foo.offer %}
+                                        <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+                                    {% endif %}
+                                </div>
+                                <div class="destination_content">
+                                    <div class="destination_title"><a href="#">{{ foo.name }}</a>
+                                    </div>
+                                    <div class="destination_subtitle">
+                                        <p>{{ foo.dis }}</p>
+                                    </div>
+                                    <div class="destination_price">From ${{ foo.price }}</div>
+                                </div>
+                            </div>
 
-							{% endfor %}
+                        {% endfor %}
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Testimonials -->
 
@@ -396,8 +400,7 @@
                         {% for foo in blog %}
                             <!-- News Post -->
                             <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                                <div class="news_post_image"><img style="height: 200px; width: 300px"
-                                                                  src="{{ foo.img2.url }}" alt=""></div>
+                                <div class="news_post_image"><img style="height: 200px; width: 300px" src="{{ foo.img2.url }}" alt=""></div>
                                 <div class="news_post_content">
                                     <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
                                         <div>{{ foo.date }}</div>
@@ -551,6 +554,7 @@
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
 </body>
 </html>
 
