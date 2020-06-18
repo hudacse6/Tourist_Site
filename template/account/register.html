@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>registration page</title>
+</head>
+<body>
+<h2>this is registration form</h2>
+<form action="register" method="post"><br>
+    {% csrf_token %}
+    <input type="text" name="first_name" placeholder="first_name"><br>
+    <input type="text" name="last_name" placeholder="last_name"><br>
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="email" name="email" placeholder="email"><br>
+    <input type="password" name="password1" placeholder="Password"><br>
+    <input type="password" name="password2" placeholder="Confirm Password"><br>
+    <input type="submit">
+</form>
+
+<div>
+    {% for foo in messages %}
+        {{ foo }}
+    {% endfor %}
+
+</div>
+<a href="login">Already Register, Click for Login</a>
+</body>
+</html>
