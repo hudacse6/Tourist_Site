@@ -8,7 +8,7 @@ celery==4.4.5
 certifi==2019.9.11
 chardet==3.0.4
 dj-database-url==0.5.0
-Django==3.0.6
+Django==3.0.7
 django-crispy-forms==1.9.1
 django-heroku==0.3.1
 django-mathfilters==1.0.0
