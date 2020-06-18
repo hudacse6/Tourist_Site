@@ -9,6 +9,8 @@ class Destination(models.Model):
     price = models.IntegerField()
     offer = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.name
 
 class News_blog(models.Model):
     img2 = models.ImageField(upload_to='blog_pics')
@@ -17,3 +19,6 @@ class News_blog(models.Model):
     post_blog_title = models.CharField(max_length=100)
     title_category = models.CharField(max_length=100)
     post_blog_summary = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.post_blog_title
